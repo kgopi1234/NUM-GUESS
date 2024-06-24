@@ -1,0 +1,84 @@
+	NUM GUESS (MINI PROJ – 1)
+
+Problem Statement-
+Build a number Guessing Game in which the user selects a range.
+Assume the user selected a range from X to Y where both X and Y are integers.
+So a random number in that range is selected by the system where the user needs to guess the 
+minimum number of guesses.
+
+Algorithm:
+Get the range from the user.
+Generate a random number in the range.
+Initialize the number of guesses to 0.
+Loop until the user guesses the number correctly.
+In each iteration, get the user's guess.
+Increment the number of guesses .
+Check if the user's guess is correct. If it is, exit the loop. If not, provide a hint and continue the loop.
+
+Pseudo Code:
+INPUT num1, num2 // taking inputs from user							x = RANDOM(num1, num2)							guess_chance = 0 // initialize the number of guesses
+WHILE true											guess = INPUT("Guess a number between x and y: ") // get the user's guess	guess-chance += 1 // increment the number of guesses
+IF guess == x												PRINT “ Congratulations! your guess is correct.It took you {guess_chance} attempts.”												BREAK
+  ELSE IF guess < x
+    PRINT "your guess low than the number."
+  ELSE
+    PRINT "your guess high than the number."
+END WHILE
+Analysis of the Problem Statement
+The problem statement requires us to build a number guessing game where the user selects a range and the system generates a random number in that range. The user needs to guess the number in the minimum number of guesses.
+The key challenges in this problem are:
+Generating a random number in the range
+Implementing a loop that continues until the user guesses the number correctly
+Providing hints to the user to help them guess the number correctly
+The solution uses the random module to generate a random number in the range, and a while loop to continue until the user guesses the number correctly. The hints are provided using if-else statements to check if the user's guess is too low or too high.
+
+
+* program : 
+
+
+import random
+
+
+def guessing_number():
+    print("Welcome to the Number Guessing Game!")
+    print("This is GOPI Guessing Master")
+    print("You need to guess a number chosen by me ")
+    num1 = int(input("Enter a start range: "))
+    num2 = int(input("Enter an end range: "))
+    x = random.randint(num1, num2)
+    guess_chance = 0
+    while True:
+        guess = int(input(f"Guess a number between {num1} and {num2}: "))
+        guess_chance += 1
+        if x == guess:
+            print(f"Congratulations! Your guess is correct. It took you {guess_chance} attempts.")
+            break
+        elif guess < x:
+            print("Your guess is lower than the number.")
+        else:
+            print("Your guess is higher than the number.")
+            
+if __name__ =='__main__':
+    guessing_number()
+
+
+
+Output : Welcome to the Number Guessing Game!
+This is GOPI Guessing Master
+You need to guess a number chosen by me    
+Enter a start range: 3
+Enter an end range: 6
+Guess a number between 3 and 6: 4
+Your guess is lower than the number.
+Guess a number between 3 and 6: 5
+Congratulations! Your guess is correct. It took you 2 attempts.
+PS C:\Users\GOPI.K\Desktop\vs code programs.py>
+
+
+
+
+
+
+
+
+
